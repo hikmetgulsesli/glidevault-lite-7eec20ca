@@ -95,8 +95,8 @@ export default function App() {
       <style>{`
         [data-setfarm-root="glidevault-lite"] [data-alt^="A high-speed, futuristic neon-noir race track"] {
           background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          background-repeat: repeat;
+          background-size: 100% 100%;
         }
       `}</style>
       {state.visibleScreen === 'settings' ? (

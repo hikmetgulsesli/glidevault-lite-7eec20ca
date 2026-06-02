@@ -10,6 +10,9 @@ import {
   type GlideVaultAppActions,
   type GlideVaultAppState,
 } from './features/glidevault-lite/glidevault-lite.store';
+import { PAUSE_GAME_ACTION_ID } from './features/surf-gameplay/act_pause_game';
+import { RESTART_GAME_ACTION_ID } from './features/surf-gameplay/act_restart_game';
+import { START_GAME_ACTION_ID } from './features/surf-gameplay/act_start_game';
 
 declare global {
   var app:
@@ -64,10 +67,10 @@ export default function App() {
 
   const gameplayActions = useMemo<Partial<Record<GameplayGlidevaultLiteActionId, () => void>>>(
     () => ({
-      'start-engine-1': actions.startEngine,
-      'pause-2': actions.togglePause,
+      [START_GAME_ACTION_ID]: actions.startEngine,
+      [PAUSE_GAME_ACTION_ID]: actions.togglePause,
       'settings-3': () => actions.setVisibleScreen('settings'),
-      'restart-alt-4': actions.restart,
+      [RESTART_GAME_ACTION_ID]: actions.restart,
     }),
     [actions],
   );
@@ -89,6 +92,13 @@ export default function App() {
 
   return (
     <div data-setfarm-root="glidevault-lite" data-testid="setfarm-app-root" className="min-h-screen">
+      <style>{`
+        [data-setfarm-root="glidevault-lite"] [data-alt^="A high-speed, futuristic neon-noir race track"] {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      `}</style>
       {state.visibleScreen === 'settings' ? (
         <GameSettingsGlidevaultLite actions={settingsActions} />
       ) : (

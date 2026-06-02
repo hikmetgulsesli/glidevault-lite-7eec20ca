@@ -36,7 +36,15 @@ export function GameplayGlidevaultLite({ actions, runtime }: GameplayGlidevaultL
   return (
     <>
       {/* Playfield Background */}
-      <div className="absolute inset-0 grid-bg z-0" style={{ backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center" }}></div>
+      <div
+      className="absolute inset-0 grid-bg z-0"
+      style={{
+        background: "radial-gradient(circle at 50% 22%, rgba(0, 242, 255, 0.18) 0 1px, transparent 2px), linear-gradient(180deg, rgba(0, 242, 255, 0.16) 0 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.12) 0 1px, transparent 1px), linear-gradient(180deg, #10131a 0%, #071018 100%) center / cover no-repeat",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+      ></div>
       <div className="absolute inset-0 scanlines z-50 pointer-events-none opacity-30"></div>
       {/* Gameplay Canvas (The World) */}
       <main className="absolute inset-0 z-10 flex items-center justify-center">

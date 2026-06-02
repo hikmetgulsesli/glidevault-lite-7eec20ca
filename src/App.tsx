@@ -92,6 +92,13 @@ export default function App() {
 
   return (
     <div data-setfarm-root="glidevault-lite" data-testid="setfarm-app-root" className="min-h-screen">
+      <style>{`
+        [data-setfarm-root="glidevault-lite"] [data-alt^="A high-speed, futuristic neon-noir race track"] {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      `}</style>
       {state.visibleScreen === 'settings' ? (
         <GameSettingsGlidevaultLite actions={settingsActions} />
       ) : (

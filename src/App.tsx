@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import {
   GameSettingsGlidevaultLite,
   GameplayGlidevaultLite,
@@ -10,8 +10,6 @@ import {
   type GlideVaultAppActions,
   type GlideVaultAppState,
 } from './features/glidevault-lite/glidevault-lite.store';
-
-type AppView = 'gameplay' | 'settings';
 
 declare global {
   var app:
@@ -31,18 +29,44 @@ declare global {
 
 export default function App() {
   const { state, actions } = useGlideVaultLiteStore();
-  const [view, setView] = useState<AppView>('gameplay');
+  const gameplayInputActive = state.visibleScreen === 'gameplay' && state.status === 'running';
 
   useEffect(() => {
     window.app = { state, actions };
     globalThis.app = { state, actions };
   }, [state, actions]);
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (!gameplayInputActive) {
+        return;
+      }
+
+      if (event.key === 'ArrowLeft' || event.key.toLowerCase() === 'a') {
+        event.preventDefault();
+        actions.moveLeft();
+      }
+
+      if (event.key === 'ArrowRight' || event.key.toLowerCase() === 'd') {
+        event.preventDefault();
+        actions.moveRight();
+      }
+
+      if (event.key === 'ArrowUp' || event.key === ' ' || event.key.toLowerCase() === 'w') {
+        event.preventDefault();
+        actions.boost();
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [actions, gameplayInputActive]);
+
   const gameplayActions = useMemo<Partial<Record<GameplayGlidevaultLiteActionId, () => void>>>(
     () => ({
       'start-engine-1': actions.startEngine,
       'pause-2': actions.togglePause,
-      'settings-3': () => setView('settings'),
+      'settings-3': () => actions.setVisibleScreen('settings'),
       'restart-alt-4': actions.restart,
     }),
     [actions],
@@ -50,13 +74,13 @@ export default function App() {
 
   const settingsActions = useMemo<Partial<Record<GameSettingsGlidevaultLiteActionId, () => void>>>(
     () => ({
-      'return-to-game-1': () => setView('gameplay'),
+      'return-to-game-1': () => actions.setVisibleScreen('gameplay'),
       'normal-2': () => actions.setDifficulty('normal'),
       'hard-3': () => actions.setDifficulty('hard'),
       'ace-4': () => actions.setDifficulty('ace'),
       'save-preferences-5': () => {
         actions.savePreferences();
-        setView('gameplay');
+        actions.setVisibleScreen('gameplay');
       },
       'reset-to-default-6': actions.resetToDefault,
     }),
@@ -65,10 +89,41 @@ export default function App() {
 
   return (
     <div data-setfarm-root="glidevault-lite" data-testid="setfarm-app-root" className="min-h-screen">
-      {view === 'settings' ? (
+      {state.visibleScreen === 'settings' ? (
         <GameSettingsGlidevaultLite actions={settingsActions} />
       ) : (
-        <GameplayGlidevaultLite actions={gameplayActions} runtime={state.runtime} />
+        <>
+          <GameplayGlidevaultLite actions={gameplayActions} runtime={state.runtime} />
+          <div className="glidevault-touch-controls" data-testid="glidevault-touch-controls">
+            <button
+              type="button"
+              className="glidevault-touch-button"
+              disabled={!gameplayInputActive}
+              aria-label="Move left"
+              onClick={actions.moveLeft}
+            >
+              Left
+            </button>
+            <button
+              type="button"
+              className="glidevault-touch-button glidevault-touch-button--primary"
+              disabled={!gameplayInputActive}
+              aria-label="Boost"
+              onClick={actions.boost}
+            >
+              Boost
+            </button>
+            <button
+              type="button"
+              className="glidevault-touch-button"
+              disabled={!gameplayInputActive}
+              aria-label="Move right"
+              onClick={actions.moveRight}
+            >
+              Right
+            </button>
+          </div>
+        </>
       )}
     </div>
   );

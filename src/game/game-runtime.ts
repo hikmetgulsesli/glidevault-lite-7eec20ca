@@ -25,6 +25,8 @@ export interface GlideVaultRuntimeSnapshot {
   energy: number;
   lives: number;
   paused: boolean;
+  running: boolean;
+  difficulty: GlideVaultDifficulty;
 }
 
 const difficultySpeed: Record<GlideVaultDifficulty, number> = {
@@ -85,6 +87,35 @@ export function setGlideVaultDifficulty(
   };
 }
 
+export function moveGlideVaultPlayer(
+  state: GlideVaultRuntimeState,
+  laneDelta: number,
+): GlideVaultRuntimeState {
+  if (!state.running || state.paused || state.lives <= 0) {
+    return state;
+  }
+
+  return {
+    ...state,
+    player: {
+      ...state.player,
+      lane: Math.max(0, Math.min(2, state.player.lane + laneDelta)),
+    },
+  };
+}
+
+export function boostGlideVaultPlayer(state: GlideVaultRuntimeState): GlideVaultRuntimeState {
+  if (!state.running || state.paused || state.lives <= 0 || state.energy <= 0) {
+    return state;
+  }
+
+  return {
+    ...state,
+    score: state.score + 25,
+    energy: Math.max(0, state.energy - 1),
+  };
+}
+
 export function stepGlideVaultRuntime(state: GlideVaultRuntimeState): GlideVaultRuntimeState {
   if (!state.running || state.paused || state.lives <= 0) {
     return state;
@@ -121,5 +152,7 @@ export function toGlideVaultRuntimeSnapshot(
     energy: state.energy,
     lives: state.lives,
     paused: state.paused,
+    running: state.running,
+    difficulty: state.difficulty,
   };
 }

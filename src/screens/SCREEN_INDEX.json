@@ -1,0 +1,84 @@
+[
+  {
+    "screenId": "a883ad69591f4a3496abf316a7037e19",
+    "title": "Game Settings - GlideVault Lite",
+    "componentName": "GameSettingsGlidevaultLite",
+    "file": "src/screens/GameSettingsGlidevaultLite.tsx",
+    "buttons": 6,
+    "inputs": 3,
+    "links": 0,
+    "actions": [
+      {
+        "id": "return-to-game-1",
+        "kind": "button",
+        "label": "Return to Game",
+        "index": 0
+      },
+      {
+        "id": "normal-2",
+        "kind": "button",
+        "label": "NORMAL",
+        "index": 1
+      },
+      {
+        "id": "hard-3",
+        "kind": "button",
+        "label": "HARD",
+        "index": 2
+      },
+      {
+        "id": "ace-4",
+        "kind": "button",
+        "label": "ACE",
+        "index": 3
+      },
+      {
+        "id": "save-preferences-5",
+        "kind": "button",
+        "label": "SAVE PREFERENCES",
+        "index": 4
+      },
+      {
+        "id": "reset-to-default-6",
+        "kind": "button",
+        "label": "RESET TO DEFAULT",
+        "index": 5
+      }
+    ]
+  },
+  {
+    "screenId": "893555cd0b1c4f789d5026ac50299f13",
+    "title": "Gameplay - GlideVault Lite",
+    "componentName": "GameplayGlidevaultLite",
+    "file": "src/screens/GameplayGlidevaultLite.tsx",
+    "buttons": 4,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "start-engine-1",
+        "kind": "button",
+        "label": "Start Engine",
+        "index": 0
+      },
+      {
+        "id": "pause-2",
+        "kind": "button",
+        "label": "Pause",
+        "index": 1
+      },
+      {
+        "id": "settings-3",
+        "kind": "button",
+        "label": "Settings",
+        "index": 2
+      },
+      {
+        "id": "restart-alt-4",
+        "kind": "button",
+        "label": "Restart Alt",
+        "index": 3
+      }
+    ]
+  }
+]

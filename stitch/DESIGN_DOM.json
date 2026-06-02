@@ -1,0 +1,555 @@
+{
+  "generatedAt": "2026-06-02T11:27:57.031Z",
+  "screenCount": 2,
+  "screens": {
+    "893555cd0b1c4f789d5026ac50299f13": {
+      "screenId": "893555cd0b1c4f789d5026ac50299f13",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "absolute",
+            "inset-0",
+            "z-10",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "childCount": 5
+        },
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "fixed",
+            "top-0",
+            "left-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-hud-safe-area",
+            "py-4"
+          ],
+          "childCount": 10
+        },
+        {
+          "tag": "aside",
+          "layout": "flex-col",
+          "classes": [
+            "fixed",
+            "left-hud-safe-area",
+            "top-1/2",
+            "-translate-y-1/2",
+            "w-48",
+            "z-40",
+            "hidden",
+            "md:flex",
+            "flex-col",
+            "gap-6"
+          ],
+          "childCount": 12
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Start Engine",
+          "classes": [
+            "group",
+            "relative",
+            "px-8",
+            "py-4",
+            "border",
+            "border-primary",
+            "text-primary",
+            "font-label-caps",
+            "text-label-caps",
+            "uppercase",
+            "tracking-[0.2em]",
+            "transition-all",
+            "duration-300",
+            "hover:bg-primary",
+            "hover:text-surface-container-lowest",
+            "hover:drop-shadow-[0_0_15px_rgba(0,242,255,0.8)]",
+            "overflow-hidden"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "pause",
+          "classes": [
+            "w-10",
+            "h-10",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-primary",
+            "dark:text-primary",
+            "hover:bg-primary/20",
+            "hover:text-primary",
+            "transition-all",
+            "duration-200",
+            "active:scale-95",
+            "active:brightness-125",
+            "border",
+            "border-transparent",
+            "rounded",
+            "hover:border-primary/50",
+            "relative",
+            "group"
+          ],
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "classes": [
+            "hidden",
+            "md:flex",
+            "w-10",
+            "h-10",
+            "items-center",
+            "justify-center",
+            "text-primary",
+            "dark:text-primary",
+            "hover:bg-primary/20",
+            "hover:text-primary",
+            "transition-all",
+            "duration-200",
+            "active:scale-95",
+            "active:brightness-125",
+            "border",
+            "border-transparent",
+            "rounded",
+            "hover:border-primary/50",
+            "relative",
+            "group"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "restart_alt",
+          "classes": [
+            "w-10",
+            "h-10",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-primary",
+            "dark:text-primary",
+            "hover:bg-primary/20",
+            "hover:text-primary",
+            "transition-all",
+            "duration-200",
+            "active:scale-95",
+            "active:brightness-125",
+            "border",
+            "border-transparent",
+            "rounded",
+            "hover:border-primary/50",
+            "relative",
+            "group"
+          ],
+          "icon": "restart_alt",
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "pause",
+        "settings",
+        "restart_alt",
+        "key"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "on-secondary-fixed-variant": "#810081",
+        "surface-container-lowest": "#0b0e14",
+        "primary-container": "#00f2ff",
+        "tertiary": "#fff6ed",
+        "on-secondary": "#5b005b",
+        "secondary-fixed-dim": "#ffabf3",
+        "on-background": "#e1e2eb",
+        "on-surface-variant": "#b9cacb",
+        "secondary": "#ffabf3",
+        "surface-container-low": "#191c22",
+        "tertiary-fixed": "#ffdea8",
+        "inverse-surface": "#e1e2eb",
+        "background": "#10131a",
+        "surface-container": "#1d2026",
+        "on-secondary-fixed": "#380038",
+        "on-primary-fixed-variant": "#004f54",
+        "tertiary-fixed-dim": "#ffba20",
+        "secondary-container": "#fe00fe",
+        "on-primary-container": "#006a71",
+        "inverse-on-surface": "#2e3037",
+        "surface-bright": "#363940",
+        "primary": "#e1fdff",
+        "on-tertiary-fixed-variant": "#5e4200",
+        "surface": "#10131a",
+        "on-primary": "#00363a",
+        "surface-dim": "#10131a",
+        "primary-fixed": "#74f5ff",
+        "outline-variant": "#3a494b",
+        "surface-container-high": "#272a31",
+        "on-surface": "#e1e2eb",
+        "surface-variant": "#32353c",
+        "surface-container-highest": "#32353c",
+        "on-error-container": "#ffdad6",
+        "inverse-primary": "#00696f",
+        "on-tertiary-fixed": "#271900",
+        "outline": "#849495",
+        "on-primary-fixed": "#002022",
+        "secondary-fixed": "#ffd7f5",
+        "surface-tint": "#00dbe7",
+        "on-secondary-container": "#500050",
+        "on-error": "#690005",
+        "on-tertiary": "#412d00",
+        "error": "#ffb4ab",
+        "tertiary-container": "#ffd58c",
+        "primary-fixed-dim": "#00dbe7",
+        "on-tertiary-container": "#7e5900",
+        "error-container": "#93000a"
+      },
+      "fonts": [
+        "JetBrains Mono",
+        "Space Grotesk",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "4"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "Start Engine",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "pause",
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "restart_alt",
+          "icon": "restart_alt",
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        }
+      ],
+      "tabBar": [],
+      "title": "Gameplay - GlideVault Lite"
+    },
+    "a883ad69591f4a3496abf316a7037e19": {
+      "screenId": "a883ad69591f4a3496abf316a7037e19",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "relative",
+            "z-10",
+            "w-full",
+            "max-w-2xl",
+            "bg-surface-container-lowest/80",
+            "backdrop-blur-xl",
+            "border",
+            "border-primary/30",
+            "p-8",
+            "flex"
+          ],
+          "childCount": 24
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Return to Game",
+          "classes": [
+            "text-primary",
+            "hover:text-primary-fixed",
+            "hover:bg-primary/10",
+            "p-2",
+            "rounded",
+            "transition-colors",
+            "group",
+            "flex",
+            "items-center",
+            "gap-2"
+          ],
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "NORMAL",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "font-label-caps",
+            "text-label-caps",
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "HARD",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "font-label-caps",
+            "text-label-caps",
+            "text-surface-container-lowest",
+            "bg-primary",
+            "shadow-[0_0_10px_rgba(0,242,255,0.3)]"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "ACE",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "font-label-caps",
+            "text-label-caps",
+            "text-on-surface-variant",
+            "hover:text-error",
+            "transition-colors"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "PREFERENCES",
+          "classes": [
+            "w-full",
+            "py-3",
+            "border",
+            "border-primary",
+            "bg-transparent",
+            "text-primary",
+            "font-label-caps",
+            "text-label-caps",
+            "uppercase",
+            "hover:bg-primary",
+            "hover:text-surface-container-lowest",
+            "transition-all",
+            "duration-300",
+            "relative",
+            "group",
+            "overflow-hidden"
+          ],
+          "icon": "save",
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "RESET TO DEFAULT",
+          "classes": [
+            "w-full",
+            "py-2",
+            "text-on-surface-variant",
+            "hover:text-error",
+            "font-label-caps",
+            "text-label-caps",
+            "text-xs",
+            "uppercase",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-2",
+            "transition-colors"
+          ],
+          "icon": "restart_alt",
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "range",
+          "label": "range",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "w-full",
+            "appearance-none",
+            "bg-transparent"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "close",
+        "speed",
+        "flight_takeoff",
+        "volume_up",
+        "keyboard",
+        "save",
+        "restart_alt"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "on-secondary-fixed-variant": "#810081",
+        "surface-container-lowest": "#0b0e14",
+        "primary-container": "#00f2ff",
+        "tertiary": "#fff6ed",
+        "on-secondary": "#5b005b",
+        "secondary-fixed-dim": "#ffabf3",
+        "on-background": "#e1e2eb",
+        "on-surface-variant": "#b9cacb",
+        "secondary": "#ffabf3",
+        "surface-container-low": "#191c22",
+        "tertiary-fixed": "#ffdea8",
+        "inverse-surface": "#e1e2eb",
+        "background": "#10131a",
+        "surface-container": "#1d2026",
+        "on-secondary-fixed": "#380038",
+        "on-primary-fixed-variant": "#004f54",
+        "tertiary-fixed-dim": "#ffba20",
+        "secondary-container": "#fe00fe",
+        "on-primary-container": "#006a71",
+        "inverse-on-surface": "#2e3037",
+        "surface-bright": "#363940",
+        "primary": "#e1fdff",
+        "on-tertiary-fixed-variant": "#5e4200",
+        "surface": "#10131a",
+        "on-primary": "#00363a",
+        "surface-dim": "#10131a",
+        "primary-fixed": "#74f5ff",
+        "outline-variant": "#3a494b",
+        "surface-container-high": "#272a31",
+        "on-surface": "#e1e2eb",
+        "surface-variant": "#32353c",
+        "surface-container-highest": "#32353c",
+        "on-error-container": "#ffdad6",
+        "inverse-primary": "#00696f",
+        "on-tertiary-fixed": "#271900",
+        "outline": "#849495",
+        "on-primary-fixed": "#002022",
+        "secondary-fixed": "#ffd7f5",
+        "surface-tint": "#00dbe7",
+        "on-secondary-container": "#500050",
+        "on-error": "#690005",
+        "on-tertiary": "#412d00",
+        "error": "#ffb4ab",
+        "tertiary-container": "#ffd58c",
+        "primary-fixed-dim": "#00dbe7",
+        "on-tertiary-container": "#7e5900",
+        "error-container": "#93000a"
+      },
+      "fonts": [
+        "JetBrains Mono",
+        "Space Grotesk",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col",
+        "gap": "8"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "Return to Game",
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "NORMAL",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "HARD",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "ACE",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "PREFERENCES",
+          "icon": "save",
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "RESET TO DEFAULT",
+          "icon": "restart_alt",
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "input",
+          "label": "range",
+          "type": "range",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [],
+      "title": "Game Settings - GlideVault Lite"
+    }
+  }
+}

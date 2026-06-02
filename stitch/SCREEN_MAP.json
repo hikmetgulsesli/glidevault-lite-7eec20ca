@@ -1,0 +1,20 @@
+[
+  {
+    "screenId": "a883ad69591f4a3496abf316a7037e19",
+    "name": "Game Settings - GlideVault Lite",
+    "type": "settings",
+    "description": "Game Settings - GlideVault Lite screen",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  },
+  {
+    "screenId": "893555cd0b1c4f789d5026ac50299f13",
+    "name": "Gameplay - GlideVault Lite",
+    "type": "game",
+    "description": "Gameplay - GlideVault Lite screen",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  }
+]

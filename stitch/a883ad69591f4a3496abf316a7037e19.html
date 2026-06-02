@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Game Settings - GlideVault Lite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#810081",
+                        "surface-container-lowest": "#0b0e14",
+                        "primary-container": "#00f2ff",
+                        "tertiary": "#fff6ed",
+                        "on-secondary": "#5b005b",
+                        "secondary-fixed-dim": "#ffabf3",
+                        "on-background": "#e1e2eb",
+                        "on-surface-variant": "#b9cacb",
+                        "secondary": "#ffabf3",
+                        "surface-container-low": "#191c22",
+                        "tertiary-fixed": "#ffdea8",
+                        "inverse-surface": "#e1e2eb",
+                        "background": "#10131a",
+                        "surface-container": "#1d2026",
+                        "on-secondary-fixed": "#380038",
+                        "on-primary-fixed-variant": "#004f54",
+                        "tertiary-fixed-dim": "#ffba20",
+                        "secondary-container": "#fe00fe",
+                        "on-primary-container": "#006a71",
+                        "inverse-on-surface": "#2e3037",
+                        "surface-bright": "#363940",
+                        "primary": "#e1fdff",
+                        "on-tertiary-fixed-variant": "#5e4200",
+                        "surface": "#10131a",
+                        "on-primary": "#00363a",
+                        "surface-dim": "#10131a",
+                        "primary-fixed": "#74f5ff",
+                        "outline-variant": "#3a494b",
+                        "surface-container-high": "#272a31",
+                        "on-surface": "#e1e2eb",
+                        "surface-variant": "#32353c",
+                        "surface-container-highest": "#32353c",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#00696f",
+                        "on-tertiary-fixed": "#271900",
+                        "outline": "#849495",
+                        "on-primary-fixed": "#002022",
+                        "secondary-fixed": "#ffd7f5",
+                        "surface-tint": "#00dbe7",
+                        "on-secondary-container": "#500050",
+                        "on-error": "#690005",
+                        "on-tertiary": "#412d00",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#ffd58c",
+                        "primary-fixed-dim": "#00dbe7",
+                        "on-tertiary-container": "#7e5900",
+                        "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "grid-unit": "4px",
+                        "margin-desktop": "40px",
+                        "hud-safe-area": "32px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["JetBrains Mono"],
+                        "label-caps": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"],
+                        "hud-data": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-xl": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "hud-data": ["20px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0b0e14;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .neon-border {
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1);
+        }
+        .neon-text {
+            text-shadow: 0 0 8px rgba(0, 242, 255, 0.4);
+        }
+        .data-bit {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            width: 8px;
+            height: 8px;
+            background-color: #00f2ff;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 8px;
+            background: #00f2ff;
+            cursor: pointer;
+            border-radius: 0;
+            box-shadow: 0 0 5px #00f2ff;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: rgba(0, 242, 255, 0.2);
+            border: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-hud-safe-area relative overflow-hidden text-on-surface">
+<!-- Background Gameplay Blur Canvas -->
+<div class="absolute inset-0 z-0 bg-[url('image-gameplay-bg')] bg-cover bg-center opacity-30 blur-sm" data-alt="A high-speed, futuristic neon-noir race track zooming through a digital cityscape. Deep contrasts of obsidian blacks and bright cyan highlights. The scene is slightly blurred to simulate motion and act as a background canvas for a user interface."></div>
+<!-- Main Settings Modal -->
+<main class="relative z-10 w-full max-w-2xl bg-surface-container-lowest/80 backdrop-blur-xl border border-primary/30 p-8 flex flex-col gap-8 neon-border">
+<div class="data-bit hidden md:block"></div>
+<div class="absolute bottom-[-1px] left-[-1px] w-8 h-8 border-b-2 border-l-2 border-primary hidden md:block"></div>
+<!-- Header -->
+<header class="flex justify-between items-center border-b border-primary/20 pb-4">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase italic tracking-tighter neon-text">
+                    SYSTEM CALIBRATION
+                </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Adjust GlideVault Parameters</p>
+</div>
+<button class="text-primary hover:text-primary-fixed hover:bg-primary/10 p-2 rounded transition-colors group flex items-center gap-2">
+<span class="font-label-caps text-label-caps uppercase hidden md:inline">Return to Game</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Left Column: Core Settings -->
+<div class="flex flex-col gap-6">
+<!-- Difficulty Section -->
+<section>
+<h2 class="font-label-caps text-label-caps text-primary mb-3 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">speed</span>
+                        Difficulty Protocol
+                    </h2>
+<div class="flex bg-surface-variant/50 p-1 rounded-sm border border-outline-variant">
+<button class="flex-1 py-2 font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">NORMAL</button>
+<button class="flex-1 py-2 font-label-caps text-label-caps text-surface-container-lowest bg-primary shadow-[0_0_10px_rgba(0,242,255,0.3)]">HARD</button>
+<button class="flex-1 py-2 font-label-caps text-label-caps text-on-surface-variant hover:text-error transition-colors">ACE</button>
+</div>
+</section>
+<!-- Speed/Sensitivity Section -->
+<section>
+<div class="flex justify-between items-end mb-3">
+<h2 class="font-label-caps text-label-caps text-primary uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">flight_takeoff</span>
+                            Glider Sensitivity
+                        </h2>
+<span class="font-hud-data text-hud-data text-secondary">0.85</span>
+</div>
+<input class="w-full appearance-none bg-transparent" max="100" min="0" type="range" value="85"/>
+</section>
+<!-- Audio Section -->
+<section class="space-y-4">
+<h2 class="font-label-caps text-label-caps text-primary uppercase flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-sm">volume_up</span>
+                        Audio Output
+                    </h2>
+<div>
+<div class="flex justify-between mb-1">
+<label class="font-body-md text-body-md text-on-surface-variant text-sm">SFX Volumetric</label>
+<span class="font-hud-data text-hud-data text-primary text-sm">90%</span>
+</div>
+<input class="w-full appearance-none bg-transparent" max="100" min="0" type="range" value="90"/>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<label class="font-body-md text-body-md text-on-surface-variant text-sm">Music Sync</label>
+<span class="font-hud-data text-hud-data text-primary text-sm">60%</span>
+</div>
+<input class="w-full appearance-none bg-transparent" max="100" min="0" type="range" value="60"/>
+</div>
+</section>
+</div>
+<!-- Right Column: Info & Actions -->
+<div class="flex flex-col gap-6 justify-between border-t md:border-t-0 md:border-l border-primary/20 pt-6 md:pt-0 md:pl-8">
+<!-- Input Help Panel -->
+<section class="bg-primary/5 border border-primary/20 p-4 relative">
+<div class="absolute top-0 right-0 w-4 h-4 border-t border-r border-primary"></div>
+<h2 class="font-label-caps text-label-caps text-primary uppercase mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">keyboard</span>
+                        Input Diagnostics
+                    </h2>
+<ul class="space-y-3 font-body-md text-body-md text-sm text-on-surface">
+<li class="flex justify-between items-center">
+<span class="text-on-surface-variant">Thrust / Brake</span>
+<div class="flex gap-1">
+<kbd class="px-2 py-1 bg-surface-bright border border-outline-variant text-primary rounded-sm font-hud-data">W</kbd>
+<kbd class="px-2 py-1 bg-surface-bright border border-outline-variant text-primary rounded-sm font-hud-data">S</kbd>
+</div>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-on-surface-variant">Bank Left / Right</span>
+<div class="flex gap-1">
+<kbd class="px-2 py-1 bg-surface-bright border border-outline-variant text-primary rounded-sm font-hud-data">A</kbd>
+<kbd class="px-2 py-1 bg-surface-bright border border-outline-variant text-primary rounded-sm font-hud-data">D</kbd>
+</div>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-on-surface-variant">Pause Sync</span>
+<kbd class="px-2 py-1 bg-surface-bright border border-outline-variant text-error rounded-sm font-hud-data">ESC</kbd>
+</li>
+</ul>
+</section>
+<!-- Actions -->
+<div class="flex flex-col gap-3 mt-auto">
+<button class="w-full py-3 border border-primary bg-transparent text-primary font-label-caps text-label-caps uppercase hover:bg-primary hover:text-surface-container-lowest transition-all duration-300 relative group overflow-hidden">
+<span class="relative z-10 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">save</span>
+                            SAVE PREFERENCES
+                        </span>
+<div class="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
+</button>
+<button class="w-full py-2 text-on-surface-variant hover:text-error font-label-caps text-label-caps text-xs uppercase flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">restart_alt</span>
+                        RESET TO DEFAULT
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

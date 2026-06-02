@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gameplay - GlideVault Lite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#810081",
+                    "surface-container-lowest": "#0b0e14",
+                    "primary-container": "#00f2ff",
+                    "tertiary": "#fff6ed",
+                    "on-secondary": "#5b005b",
+                    "secondary-fixed-dim": "#ffabf3",
+                    "on-background": "#e1e2eb",
+                    "on-surface-variant": "#b9cacb",
+                    "secondary": "#ffabf3",
+                    "surface-container-low": "#191c22",
+                    "tertiary-fixed": "#ffdea8",
+                    "inverse-surface": "#e1e2eb",
+                    "background": "#10131a",
+                    "surface-container": "#1d2026",
+                    "on-secondary-fixed": "#380038",
+                    "on-primary-fixed-variant": "#004f54",
+                    "tertiary-fixed-dim": "#ffba20",
+                    "secondary-container": "#fe00fe",
+                    "on-primary-container": "#006a71",
+                    "inverse-on-surface": "#2e3037",
+                    "surface-bright": "#363940",
+                    "primary": "#e1fdff",
+                    "on-tertiary-fixed-variant": "#5e4200",
+                    "surface": "#10131a",
+                    "on-primary": "#00363a",
+                    "surface-dim": "#10131a",
+                    "primary-fixed": "#74f5ff",
+                    "outline-variant": "#3a494b",
+                    "surface-container-high": "#272a31",
+                    "on-surface": "#e1e2eb",
+                    "surface-variant": "#32353c",
+                    "surface-container-highest": "#32353c",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#00696f",
+                    "on-tertiary-fixed": "#271900",
+                    "outline": "#849495",
+                    "on-primary-fixed": "#002022",
+                    "secondary-fixed": "#ffd7f5",
+                    "surface-tint": "#00dbe7",
+                    "on-secondary-container": "#500050",
+                    "on-error": "#690005",
+                    "on-tertiary": "#412d00",
+                    "error": "#ffb4ab",
+                    "tertiary-container": "#ffd58c",
+                    "primary-fixed-dim": "#00dbe7",
+                    "on-tertiary-container": "#7e5900",
+                    "error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "grid-unit": "4px",
+                    "margin-desktop": "40px",
+                    "hud-safe-area": "32px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "JetBrains Mono"
+                    ],
+                    "label-caps": [
+                            "Space Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Space Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "Space Grotesk"
+                    ],
+                    "display-xl": [
+                            "Space Grotesk"
+                    ],
+                    "hud-data": [
+                            "JetBrains Mono"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.15em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-xl": [
+                            "72px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "hud-data": [
+                            "20px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Decorative Grid Background */
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+        }
+        
+        /* Scanline Overlay */
+        .scanlines {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0,0,0,0.1) 50%,
+                rgba(0,0,0,0.1)
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+        /* Glitch text effect for score */
+        .glitch-hover:hover {
+            animation: glitch-anim 0.3s infinite;
+        }
+        @keyframes glitch-anim {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 1px) }
+            40% { transform: translate(-1px, -1px) }
+            60% { transform: translate(2px, 1px) }
+            80% { transform: translate(1px, -1px) }
+            100% { transform: translate(0) }
+        }
+        
+        /* Triangle Hazard Marker */
+        .hazard-marker {
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 14px solid transparent;
+            border-bottom-color: #fe00fe; /* secondary-container */
+            position: relative;
+            animation: pulse-hazard 1.5s infinite;
+        }
+        .hazard-marker::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: -6px;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 10px solid #10131a;
+        }
+        @keyframes pulse-hazard {
+            0% { filter: drop-shadow(0 0 2px rgba(254, 0, 254, 0.5)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 8px rgba(254, 0, 254, 0.9)); transform: scale(1.1); }
+            100% { filter: drop-shadow(0 0 2px rgba(254, 0, 254, 0.5)); transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface h-screen w-screen overflow-hidden selection:bg-primary-container selection:text-on-primary-container relative">
+<!-- Playfield Background -->
+<div class="absolute inset-0 grid-bg z-0"></div>
+<div class="absolute inset-0 scanlines z-50 pointer-events-none opacity-30"></div>
+<!-- Gameplay Canvas (The World) -->
+<main class="absolute inset-0 z-10 flex items-center justify-center">
+<!-- Player Character (Glider) -->
+<div class="relative w-12 h-12 flex items-center justify-center transform hover:scale-110 transition-transform duration-300 z-20">
+<svg class="w-full h-full text-primary drop-shadow-[0_0_12px_rgba(0,242,255,0.8)]" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 22L12 17L22 22L12 2Z" fill="currentColor"></path>
+<path d="M12 7L6 19L12 16L18 19L12 7Z" fill="#10131a"></path>
+</svg>
+<!-- Thrust Exhaust -->
+<div class="absolute -bottom-4 w-4 h-6 bg-gradient-to-b from-primary to-transparent rounded-full opacity-50 blur-sm"></div>
+</div>
+<!-- Start Game Overlay -->
+<div class="absolute inset-0 bg-surface-container-lowest/80 backdrop-blur-sm flex flex-col items-center justify-center z-30 transition-opacity duration-500" id="start-overlay">
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-widest uppercase mb-8 drop-shadow-[0_0_10px_rgba(0,242,255,0.5)]">System Ready</h2>
+<button class="group relative px-8 py-4 border border-primary text-primary font-label-caps text-label-caps uppercase tracking-[0.2em] transition-all duration-300 hover:bg-primary hover:text-surface-container-lowest hover:drop-shadow-[0_0_15px_rgba(0,242,255,0.8)] overflow-hidden" onclick="document.getElementById('start-overlay').style.opacity = '0'; setTimeout(() =&gt; document.getElementById('start-overlay').style.display = 'none', 500);">
+<span class="relative z-10">Start Engine</span>
+<!-- Data bit corner decoration -->
+<div class="absolute top-0 right-0 w-2 h-2 bg-primary transform group-hover:bg-surface-container-lowest transition-colors"></div>
+</button>
+<p class="mt-8 font-body-md text-body-md text-on-surface-variant/70 text-center max-w-md">
+                Controls inactive until sequence initiation.<br/>Initialize engine to begin run.
+            </p>
+</div>
+<!-- Example Hazard on Field -->
+<div class="absolute bottom-[20%] right-[30%] hazard-marker z-10"></div>
+</main>
+<!-- TopAppBar (Shared Component injected styles applied directly) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-hud-safe-area py-4 bg-transparent bg-surface-container/10 backdrop-blur-md border-b border-primary/20 drop-shadow-[0_0_10px_rgba(0,242,255,0.2)]">
+<!-- Left: Brand / Title -->
+<div class="flex items-center gap-4">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile italic tracking-tighter text-primary drop-shadow-[0_0_8px_rgba(0,242,255,0.4)] md:font-headline-lg md:text-headline-lg">
+                GLIDEVAULT LITE
+            </h1>
+</div>
+<!-- Center: HUD Data (Scores) -->
+<div class="hidden md:flex flex-col items-center">
+<div class="flex gap-8">
+<div class="flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest text-[10px]">Score</span>
+<span class="font-hud-data text-hud-data text-tertiary-fixed-dim glitch-hover drop-shadow-[0_0_5px_rgba(255,186,32,0.4)]">004020</span>
+</div>
+<div class="w-px h-8 bg-primary/30"></div>
+<div class="flex flex-col items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest text-[10px]">High Score</span>
+<span class="font-hud-data text-hud-data text-on-surface opacity-80">140999</span>
+</div>
+</div>
+</div>
+<!-- Right: Actions -->
+<div class="flex items-center gap-2 md:gap-4">
+<button class="w-10 h-10 flex items-center justify-center text-primary dark:text-primary hover:bg-primary/20 hover:text-primary transition-all duration-200 active:scale-95 active:brightness-125 border border-transparent rounded hover:border-primary/50 relative group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">pause</span>
+<!-- Data bit corner decoration -->
+<div class="absolute top-0 right-0 w-1 h-1 bg-primary/0 group-hover:bg-primary transition-colors"></div>
+</button>
+<button class="hidden md:flex w-10 h-10 items-center justify-center text-primary dark:text-primary hover:bg-primary/20 hover:text-primary transition-all duration-200 active:scale-95 active:brightness-125 border border-transparent rounded hover:border-primary/50 relative group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+<div class="absolute top-0 right-0 w-1 h-1 bg-primary/0 group-hover:bg-primary transition-colors"></div>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-primary dark:text-primary hover:bg-primary/20 hover:text-primary transition-all duration-200 active:scale-95 active:brightness-125 border border-transparent rounded hover:border-primary/50 relative group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">restart_alt</span>
+<div class="absolute top-0 right-0 w-1 h-1 bg-primary/0 group-hover:bg-primary transition-colors"></div>
+</button>
+</div>
+</header>
+<!-- Side HUD Panel (Progress & Inventory) -->
+<!-- Positioned according to Fluid HUD model (anchored to edges/corners) -->
+<aside class="fixed left-hud-safe-area top-1/2 -translate-y-1/2 w-48 z-40 hidden md:flex flex-col gap-6">
+<!-- Energy/Boost Progress -->
+<div class="bg-primary/10 backdrop-blur-[12px] border border-primary/30 p-4 relative group">
+<div class="absolute top-0 right-0 w-2 h-2 bg-primary/50"></div>
+<h3 class="font-label-caps text-label-caps text-primary mb-3">Boost Energy</h3>
+<div class="flex gap-1 h-3 w-full">
+<div class="flex-1 bg-primary/80 box-shadow-[0_0_5px_rgba(0,242,255,0.5)]"></div>
+<div class="flex-1 bg-primary/80 box-shadow-[0_0_5px_rgba(0,242,255,0.5)]"></div>
+<div class="flex-1 bg-primary/80 box-shadow-[0_0_5px_rgba(0,242,255,0.5)]"></div>
+<div class="flex-1 bg-primary/20"></div>
+<div class="flex-1 bg-primary/20"></div>
+</div>
+<div class="mt-2 text-right font-hud-data text-hud-data text-primary text-sm">60%</div>
+</div>
+<!-- Inventory: Vault Keys -->
+<div class="bg-primary/10 backdrop-blur-[12px] border border-primary/30 p-4 relative group">
+<div class="absolute top-0 right-0 w-2 h-2 bg-primary/50"></div>
+<h3 class="font-label-caps text-label-caps text-primary mb-3">Vault Keys</h3>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim drop-shadow-[0_0_5px_rgba(255,186,32,0.6)]" style="font-variation-settings: 'FILL' 1;">key</span>
+<span class="font-hud-data text-hud-data text-on-surface">2 / 3</span>
+</div>
+</div>
+</aside>
+<!-- Mobile Bottom HUD (Progress & Score for small screens) -->
+<div class="fixed bottom-0 left-0 w-full z-40 md:hidden bg-surface-container/50 backdrop-blur-md border-t border-primary/20 px-margin-mobile py-4 flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest text-[10px] mb-1">Score</span>
+<span class="font-hud-data text-hud-data text-tertiary-fixed-dim text-lg">004020</span>
+</div>
+<div class="flex flex-col items-end w-1/2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest text-[10px] mb-2">Boost</span>
+<div class="flex gap-1 h-2 w-full">
+<div class="flex-1 bg-primary/80"></div>
+<div class="flex-1 bg-primary/80"></div>
+<div class="flex-1 bg-primary/80"></div>
+<div class="flex-1 bg-primary/20"></div>
+<div class="flex-1 bg-primary/20"></div>
+</div>
+</div>
+</div>
+</body></html>

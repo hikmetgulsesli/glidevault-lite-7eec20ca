@@ -1,0 +1,24 @@
+[
+  {
+    "screenId": "a883ad69591f4a3496abf316a7037e19",
+    "title": "Game Settings - GlideVault Lite",
+    "htmlFile": "a883ad69591f4a3496abf316a7037e19.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzRlMmNlZjFlM2NlYTQ1YTg4ZjU3ZDI4OGEyMDQyNzQ0EgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM1MjYyODU2NjU3Njc0NjU3NjQy&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/glidevault-lite-7eec20ca/stitch/a883ad69591f4a3496abf316a7037e19.html",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  },
+  {
+    "screenId": "893555cd0b1c4f789d5026ac50299f13",
+    "title": "Gameplay - GlideVault Lite",
+    "htmlFile": "893555cd0b1c4f789d5026ac50299f13.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2Y4MmExMmVkNWE4ZTRmZjhhMjkxYWI2ZjdmNGNiNWQ1EgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM1MjYyODU2NjU3Njc0NjU3NjQy&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/glidevault-lite-7eec20ca/stitch/893555cd0b1c4f789d5026ac50299f13.html",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  }
+]

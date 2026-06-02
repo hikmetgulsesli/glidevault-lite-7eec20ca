@@ -1,0 +1,169 @@
+[
+  {
+    "screenId": "a883ad69591f4a3496abf316a7037e19",
+    "screenTitle": "Game Settings - GlideVault Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Return to Game",
+        "line": 151
+      },
+      {
+        "type": "button",
+        "label": "NORMAL",
+        "line": 166
+      },
+      {
+        "type": "button",
+        "label": "HARD",
+        "line": 167
+      },
+      {
+        "type": "button",
+        "label": "ACE",
+        "line": 168
+      },
+      {
+        "type": "button",
+        "label": "PREFERENCES",
+        "line": 236
+      },
+      {
+        "type": "button",
+        "label": "RESET TO DEFAULT",
+        "line": 243
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 180
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 193
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 200
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Return to Game",
+        "line": 151
+      },
+      {
+        "type": "button",
+        "label": "NORMAL",
+        "line": 166
+      },
+      {
+        "type": "button",
+        "label": "HARD",
+        "line": 167
+      },
+      {
+        "type": "button",
+        "label": "ACE",
+        "line": 168
+      },
+      {
+        "type": "button",
+        "label": "PREFERENCES",
+        "line": 236
+      },
+      {
+        "type": "button",
+        "label": "RESET TO DEFAULT",
+        "line": 243
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 180
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 193
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 200
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 9,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "893555cd0b1c4f789d5026ac50299f13",
+    "screenTitle": "Gameplay - GlideVault Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Start Engine",
+        "line": 232
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 268
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 273
+      },
+      {
+        "type": "button",
+        "label": "restart_alt",
+        "line": 277
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Start Engine",
+        "line": 232
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 268
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 273
+      },
+      {
+        "type": "button",
+        "label": "restart_alt",
+        "line": 277
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 4,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
